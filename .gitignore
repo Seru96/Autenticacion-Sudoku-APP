@@ -1,0 +1,17 @@
+# Archivos de sistema y logs
+.DS_Store
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+backend/venv/
+backend/.env
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Docker data (Base de datos local)
+postgres_data/
