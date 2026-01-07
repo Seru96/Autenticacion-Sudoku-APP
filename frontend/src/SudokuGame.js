@@ -19,7 +19,7 @@ const theme = {
 
 const API_URL = "http://localhost:8000";
 
-// --- LÓGICA DE DIFICULTAD (Basada en tu código Swift) ---
+// --- LÓGICA DE DIFICULTAD ---
 const DIFFICULTY_SETTINGS = {
   'Fácil': { id: 0, holes: 20, multiplier: 1, timeBase: 720, winBonus: 5 },
   'Medio': { id: 1, holes: 35, multiplier: 2, timeBase: 1440, winBonus: 10 },
@@ -152,7 +152,7 @@ export default function SudokuGame({ onLogout, username }) {
     if (cell.solution === num) {
       // LOGICA DE PUNTUACIÓN DE TU CÓDIGO SWIFT
       // score += 10 * difficulty.scoreMultiplier
-      if (cell.value !== num) { // Solo sumar si no estaba ya puesto
+      if (cell.value !== num) { 
           setScore(s => s + (10 * settings.multiplier));
       }
       
@@ -163,7 +163,7 @@ export default function SudokuGame({ onLogout, username }) {
       if (newCells.every(c => c.value === c.solution)) {
         clearInterval(timerRef.current);
         
-        // BONUS POR TIEMPO Y VICTORIA (Tu fórmula)
+        // BONUS POR TIEMPO Y VICTORIA 
         // score + max(0, timeBase - timeElapsed) + (10 * winBonusBase)
         const timeBonus = Math.max(0, settings.timeBase - timeElapsed);
         const winBonus = 10 * settings.winBonus;
